@@ -1,0 +1,17 @@
+name = Angular Media
+description = An angular-based modern Media filepicker interface.
+package = Media
+core = 7.x
+dependencies[] = media
+dependencies[] = file_entity
+dependencies[] = views
+dependencies[] = features
+dependencies[] = views_data_export_json
+files[] = angular_media.module
+files[] = angular_media.field.module
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = angular_media_browser
+features_exclude[dependencies][views] = views
+features_exclude[dependencies][views_data_export] = views_data_export
+features_exclude[dependencies][views_data_export_json] = views_data_export_json
