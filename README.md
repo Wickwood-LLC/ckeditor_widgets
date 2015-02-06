@@ -10,7 +10,7 @@ Rethinking the media dialog interface with the help of Angular.
 
 ###Installation
 * Install the module dependencies (file_entity, media, views, features, views_data_export_json).
-* <a href="https://github.com/albatrossdigital/angular-media-app/archive/master.zip">Download the Angular Media App</a> from <a href="https://github.com/albatrossdigital/angular-media-app">Github</a> and copy it to <code>sites/all/libraries</code> (or similar)
+* Download the Angular Media App from Github and copy it to sites/all/libraries (or similar): https://github.com/albatrossdigital/angular-media-app
 * Install the module in Drupal
 * Add a new File field and select the Angular Media Browser widget
 
