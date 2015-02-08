@@ -22,7 +22,7 @@ function angular_media_field_widget_info() {
  */
 function angular_media_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
   $options = array(
-    'multiple' => 1,
+    'cardinality' => $field['cardinality'],
     'field_name' => $instance['field_name'],
     'files' => array(),
   );
@@ -37,8 +37,9 @@ function angular_media_field_widget_form(&$form, &$form_state, $field, $instance
     //  array('angular_media', 'angular-media-app'),
     //)
     'js' => array(
-      $path . 'js/vendor/libraries.min.js' => array(),
+      $path . 'js/libraries.min.js' => array(),
       $path . 'js/app.min.js' => array(),
+      $path . 'js/vendor/jcrop.min.js' => array('weight' => 10),
     ),
     'css' => array(
       $path . 'css/app.min.css' => array(),
@@ -54,11 +55,13 @@ function angular_media_field_widget_form(&$form, &$form_state, $field, $instance
 
   //@todo: this is hacky
   $form['#validate'][] = 'angular_media_field_widget_form_validate';
+  $form['#submit'][] = 'angular_media_field_widget_form_validate';
   $form['angular_media_fields'] = isset($form['angular_media_fields']) ? $form['angular_media_fields'] : array('#type' => 'value', '#value' => array());
   $form['angular_media_fields']['#value'][] = $instance['field_name'];
 
   dpm($instance);
-  dpm($items);
+  dpm($field);
+  dpm($element);
 
 
   return array($element);
@@ -74,13 +77,14 @@ function angular_media_field_widget_form_validate($form, &$form_state) {
   if (!empty($form_state['values']['angular_media_fields'])) {
     foreach ($form_state['values']['angular_media_fields'] as $field_name) {
       $json = json_decode($_POST[$field_name.'_media']);
-      $form_state['values']['field_media2'][LANGUAGE_NONE] = array();
+      $form_state['values'][$field_name][LANGUAGE_NONE] = array();
       //$form_state['values']['field_media2'] = $form_state['values']['field_media'];
       foreach ($json as $key => $item) {
         $item->display = 1;
         $item->uplodate = '';
         $form_state['values'][$field_name][LANGUAGE_NONE][] = (array)$item;
       }
+      dpm($form_state['values'][$field_name]);
     }
   }
 }
