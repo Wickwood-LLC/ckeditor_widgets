@@ -68,6 +68,39 @@ function angular_media_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_media_license'
+  $field_bases['field_media_license'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_media_license',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'licence' => array(
+        0 => 'licence',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'creative_commons',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 1,
+        8 => 8,
+        9 => 9,
+        2 => 2,
+        3 => 3,
+        4 => 4,
+        5 => 5,
+        6 => 6,
+        7 => 7,
+      ),
+      'jurisdiction' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'creative_commons',
+  );
+
   // Exported field_base: 'field_media_source'
   $field_bases['field_media_source'] = array(
     'active' => 1,

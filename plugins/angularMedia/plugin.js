@@ -12,6 +12,10 @@
   // @param {Array}
   //            elements Array of {@link CKEDITOR.dialog.definition.content}
   //            objects.
+
+
+  
+
   function attachAngularMedia(editor, dialogName, definition, elements) {
     if (!elements || !elements.length)
       return;
@@ -59,49 +63,40 @@
 
     // Bind a watch on hidden value field to update CKEditor dialog
     $(document).ready(function() {
+      
       setTimeout(function(){
         $('#field_picture_media').bind('change', function() {
-          alert('asd');
+          var $that = $(this);
+          
+          setTimeout(function(){
+            var files = JSON.parse($that.val());
+            var file = files.pop();
+
+            var parts = evt.sender.filebrowser.target.split(':');
+            dialog.setValueOf(parts[0], parts[1], file.url);
+
+            // Add title/alt attr using default CKEditor image values.
+            var altEl = dialog.getContentElement("info", "txtAlt");
+            if (altEl) {
+              altEl.setValue(file.alt != undefined ? file.alt : '');
+            }
+            // Try CKEditor defined title value first.
+            var titleEl = dialog.getContentElement("info", "txtGenTitle");
+            if (titleEl) {
+              titleEl.setValue(file.title != undefined ? file.title : '');
+            } else {
+              // If it doesn't work, try a more generic ID.
+              titleEl = dialog.getContentElement("info", "txtTitle");
+              if (titleEl) {
+                titleEl.setValue(file.title != undefined ? file.title : '');
+              }
+            }
+          }, 100);
+
         });
-        console.log('val',$('#field_picture_media').val());
-      }, 3000);
-      console.log('asd',$('#field_picture_media').val());
+      }, 500);
+
     });
-    
-
-    var mediaIframe = Drupal.media.popups.angularMedia(function(mediaFiles) {
-      if (mediaFiles.length > 0) {
-        // There is probably a better way of getting the url for the file
-        // but media returns the object with an absolute url and the uri.
-        // We don't have access to file_create_url in javascript so we can't
-        // use that. For now, just remove the server name from the absolute
-        // url to get the relative. FIX THIS!!!
-        var fileUrl = mediaFiles[0].url.replace(location.origin, '');
-        var fileAlt = (mediaFiles[0].alt) ? mediaFiles[0].alt : "" ;
-        var fileTitle = (mediaFiles[0].title) ? mediaFiles[0].title : "";
-
-        var parts = evt.sender.filebrowser.target.split(':');
-        dialog.setValueOf(parts[0], parts[1], fileUrl);
-
-        // Add title/alt attr using default CKEditor image values.
-        var altEl = dialog.getContentElement("info", "txtAlt");
-        if (altEl) {
-          altEl.setValue(fileAlt);
-        }
-        // Try CKEditor defined title value first.
-        var titleEl = dialog.getContentElement("info", "txtGenTitle");
-        if (titleEl) {
-          titleEl.setValue(fileTitle);
-        } else {
-          // If it doesn't work, try a more generic ID.
-          titleEl = dialog.getContentElement("info", "txtTitle");
-          if (titleEl) {
-            titleEl.setValue(fileTitle);
-          }
-        }
-      }
-    });
-    $(mediaIframe).parent().css({'z-index':'10002'});
   }
 
   CKEDITOR.plugins.add('angularMedia',
@@ -113,11 +108,11 @@
           });
 
   CKEDITOR.on('dialogDefinition', function(evt) {
-    var definition = evt.data.definition,
-            element;
+    var definition = evt.data.definition, element;
     // Associate mediabrowser to elements with 'filebrowser' attribute.
     for (var i = 0; i < definition.contents.length; ++i) {
       if ((element = definition.contents[ i ])) {
+        // @todo: Change text to "Select" console.log(element);
         attachAngularMedia(evt.editor, evt.data.name, definition, element.elements);
         if (element.hidden && element.filebrowser && element.type != 'fileButton') {
           element.hidden = false;

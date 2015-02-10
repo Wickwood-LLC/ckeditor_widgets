@@ -33,6 +33,11 @@ function angular_media_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: File: File ID */
+  $handler->display->display_options['fields']['fid']['id'] = 'fid';
+  $handler->display->display_options['fields']['fid']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['fid']['field'] = 'fid';
+  $handler->display->display_options['fields']['fid']['label'] = 'fid';
   /* Field: File: Name */
   $handler->display->display_options['fields']['filename']['id'] = 'filename';
   $handler->display->display_options['fields']['filename']['table'] = 'file_managed';
@@ -61,7 +66,7 @@ function angular_media_views_default_views() {
   $handler->display->display_options['fields']['uri']['id'] = 'uri';
   $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
   $handler->display->display_options['fields']['uri']['field'] = 'uri';
-  $handler->display->display_options['fields']['uri']['label'] = 'path';
+  $handler->display->display_options['fields']['uri']['label'] = 'url';
   $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
   /* Field: File: Size */
   $handler->display->display_options['fields']['filesize']['id'] = 'filesize';
@@ -91,12 +96,23 @@ function angular_media_views_default_views() {
   $handler->display->display_options['fields']['count']['table'] = 'file_usage';
   $handler->display->display_options['fields']['count']['field'] = 'count';
   $handler->display->display_options['fields']['count']['label'] = 'use';
-  /* Field: File: Path */
-  $handler->display->display_options['fields']['uri_1']['id'] = 'uri_1';
-  $handler->display->display_options['fields']['uri_1']['table'] = 'file_managed';
-  $handler->display->display_options['fields']['uri_1']['field'] = 'uri';
-  $handler->display->display_options['fields']['uri_1']['label'] = 'thumbUrl';
-  $handler->display->display_options['fields']['uri_1']['file_download_path'] = TRUE;
+  /* Field: File: Image Style URL */
+  $handler->display->display_options['fields']['image_style_url']['id'] = 'image_style_url';
+  $handler->display->display_options['fields']['image_style_url']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['image_style_url']['field'] = 'image_style_url';
+  $handler->display->display_options['fields']['image_style_url']['label'] = 'thumbUrl';
+  $handler->display->display_options['fields']['image_style_url']['image_style'] = 'media_thumbnail';
+  /* Field: File: Image Style URL */
+  $handler->display->display_options['fields']['image_style_url_1']['id'] = 'image_style_url_1';
+  $handler->display->display_options['fields']['image_style_url_1']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['image_style_url_1']['field'] = 'image_style_url';
+  $handler->display->display_options['fields']['image_style_url_1']['label'] = 'previewUrl';
+  $handler->display->display_options['fields']['image_style_url_1']['image_style'] = 'media_preview';
+  /* Sort criterion: File: Upload date */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'file_managed';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   /* Contextual filter: File: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'file_managed';
@@ -119,6 +135,8 @@ function angular_media_views_default_views() {
   /* Display: Data export */
   $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_json';
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;

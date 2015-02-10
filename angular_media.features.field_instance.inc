@@ -10,6 +10,54 @@
 function angular_media_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'file-audio-field_media_license'
+  $field_instances['file-audio-field_media_license'] = array(
+    'bundle' => 'audio',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'creative_commons',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'creative_commons_small_image',
+        'weight' => 1,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_media_license',
+    'label' => 'License',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'creative_commons',
+      'settings' => array(),
+      'type' => 'select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'file-audio-field_media_source'
   $field_instances['file-audio-field_media_source'] = array(
     'bundle' => 'audio',
@@ -75,6 +123,54 @@ function angular_media_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'file-document-field_media_license'
+  $field_instances['file-document-field_media_license'] = array(
+    'bundle' => 'document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'creative_commons',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'creative_commons_small_image',
+        'weight' => 1,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_media_license',
+    'label' => 'License',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'creative_commons',
+      'settings' => array(),
+      'type' => 'select',
+      'weight' => 3,
     ),
   );
 
@@ -248,6 +344,60 @@ function angular_media_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'file-image-field_media_license'
+  $field_instances['file-image-field_media_license'] = array(
+    'bundle' => 'image',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'creative_commons',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'creative_commons_small_image',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_media_license',
+    'label' => 'License',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'creative_commons',
+      'settings' => array(),
+      'type' => 'select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'file-image-field_media_source'
   $field_instances['file-image-field_media_source'] = array(
     'bundle' => 'image',
@@ -319,6 +469,60 @@ function angular_media_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'file-video-field_media_license'
+  $field_instances['file-video-field_media_license'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'creative_commons',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'creative_commons_small_image',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_media_license',
+    'label' => 'License',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'creative_commons',
+      'settings' => array(),
+      'type' => 'select',
+      'weight' => 6,
     ),
   );
 
@@ -457,6 +661,7 @@ function angular_media_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
+  t('License');
   t('Source');
   t('Thumbnail');
   t('Title Text');
