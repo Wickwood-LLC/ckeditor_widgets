@@ -39,7 +39,8 @@ function angular_media_field_widget_form(&$form, &$form_state, $field, $instance
     'js' => array(
       $path . 'js/libraries.min.js' => array(),
       $path . 'js/app.min.js' => array(),
-      $path . 'js/vendor/jcrop.min.js' => array('weight' => 10),
+      //$path . 'js/vendor/jcrop.min.js' => array('weight' => 10),
+      drupal_get_path('module', 'angular_media') . '/js/angular-media.js' => array(),
     ),
     'css' => array(
       $path . 'css/app.min.css' => array(),
@@ -58,11 +59,6 @@ function angular_media_field_widget_form(&$form, &$form_state, $field, $instance
   $form['#submit'][] = 'angular_media_field_widget_form_validate';
   $form['angular_media_fields'] = isset($form['angular_media_fields']) ? $form['angular_media_fields'] : array('#type' => 'value', '#value' => array());
   $form['angular_media_fields']['#value'][] = $instance['field_name'];
-
-  dpm($instance);
-  dpm($field);
-  dpm($element);
-
 
   return array($element);
 }
