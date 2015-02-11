@@ -6,7 +6,7 @@
  */
 
 include_once 'angular_media.features.inc';
-include_once 'angular_media.field.inc';
+include_once 'includes/angular_media.field.inc';
 
 // Load all Field module hooks for File.
 //module_load_include('inc', 'angular_media', 'angular_media.field');
