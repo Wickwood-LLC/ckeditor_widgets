@@ -25,7 +25,7 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
         // Configurable settings
         var allowedFull = editor.config.widgetbootstrap_allowedFull != undefined ? editor.config.widgetbootstrap_allowedFull :
             'div(!row,two-col-left,two-col-right,accordion,two-col,three-col){width};' +
-            'div(!columns,small-12,medium-3,medium-9,col-sidebar,col-main,col-1,col-2,col-3)'
+            'div(!col-md-6,col-md-3,col-md-9,col-sidebar,col-main,col-1,col-2,col-3)'
             'div(!alert-box,success,alert,warning,info,secondary,alert-text)';
         var allowedWidget = editor.config.widgetbootstrap_allowedWidget != undefined ? editor.config.widgetbootstrap_allowedFull :
             'p span br ul ol li strong em img[!src,alt,width,height]';
@@ -103,8 +103,8 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             template:
                 '<div class="row two-col">' +
-                    '<div class="col-md-6 col-1"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Content</p></div>' +
-                    '<div class="col-md-6 col-2"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Content</p></div>' +
+                    '<div class="col-md-6 col-1"><p><img src="http://placehold.it/500x280&text=Image" /></p><p>Content</p></div>' +
+                    '<div class="col-md-6 col-2"><p><img src="http://placehold.it/500x280&text=Image" /></p><p>Content</p></div>' +
                 '</div>',
 
             editables: {
@@ -132,9 +132,9 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             template:
                 '<div class="row three-col">' +
-                    '<div class="col-md-4 col-1"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Text below</p></div>' +
-                    '<div class="col-md-4 col-2"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Text below</p></div>' +
-                    '<div class="col-md-4 col-3"><p><img src="http://placehold.it/300x250&text=Image" /></p><p>Text below</p></div>' +
+                    '<div class="col-md-4 col-1"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
+                    '<div class="col-md-4 col-2"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
+                    '<div class="col-md-4 col-3"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
                 '</div>',
 
             editables: {
