@@ -6,7 +6,7 @@ http://youtu.be/KCfy6UQy3VQ
 
 ###Requirements
 * [CKEditor Drupal module](http://drupal.org/project/ckeditor)
-* Download the [CKEditor library](http://ckeditor.com/download) with the [Widget plugin](http://ckeditor.com/addon/widget)
+* Download the [CKEditor library](http://ckeditor.com/download) with the [Widget plugin](http://ckeditor.com/addon/widget).  You can also clone from this GitHub project, which will include everything you need: https://github.com/albatrossdigital/ckeditor-sandbox.
 
 ###Installation and configuration
 * Install the module at /admin/modules
