@@ -4,9 +4,11 @@ This module adds a dropdown menu with numerous CKEditor widgets, including a quo
 * Watch a demo: http://youtu.be/KCfy6UQy3VQ
 * Hands-on demo: http://ckeditor-widgets.albatrossdemos.com/
 
+
 ###Requirements
 * [CKEditor Drupal module](http://drupal.org/project/ckeditor)
 * Download the [CKEditor library](http://ckeditor.com/download) with the [Widget plugin](http://ckeditor.com/addon/widget).  You can also clone from this GitHub project, which will include everything you need: https://github.com/albatrossdigital/ckeditor-sandbox.
+
 
 ###Installation and configuration
 1. Install the module at `/admin/modules`
@@ -24,6 +26,7 @@ p a div span h2 h3 h4 h5 h6 section article iframe object embed strong b i em ci
 
 ####Auto-install
 Don't want to go through all of the setup? Try [installing our distro, Soar](https://github.com/albatrossdigital/soar-drops-7).  The [soar_input_formats](https://github.com/albatrossdigital/soar-drops-7/tree/master/profiles/soar/modules/features/soar_input_formats) feature sets up everything.
+
 
 ###Supporting organization: 
 [Albatross Digital](http://albatrossdigital.com)
