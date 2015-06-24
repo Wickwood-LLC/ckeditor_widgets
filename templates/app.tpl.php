@@ -1,5 +1,5 @@
-<script type="text/javascript">var appUrl = '<?php print $appUrl; ?>';</script>
 <div class="angular-media-field" <?php if($hidden): ?>style="display: none;"<?php endif; ?>>
+  <base href="<?php print $appUrl ?>" />
   <div ui-view></div>
   <div class="thumbnails" ng-class="" ng-controller="thumbnails" ng-init="init(<?php print str_replace('"', '\'', $settings); ?>)"><!-- nv-file-drop="" uploader="uploader"-->
     
@@ -7,13 +7,14 @@
     <?php if(!$hidden): ?>
 
       <?php if($style == 'placeholder'): ?>
-        <div class="placeholder-thumbnail" ng-repeat="(key, file) in files['<?php print $fieldName; ?>']" title="{{file.name}}">
+
+        <div class="placeholder-thumbnail" ng-repeat="(key, file) in files['<?php print $fieldName; ?>']" title="{{file.name}}" ng-class="files['<?php print $fieldName; ?>'].length ? 'visible' : 'hidden'">
           <img ng-if="file.thumbUrl" ng-src="{{file.url}}" />
           <button type="button" class="btn btn-default btn-action thumbnail-edit" ng-click="edit(file.fid, '<?php print $fieldName; ?>', key)"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
           <button type="button" class="btn btn-danger btn-action thumbnail-remove" ng-click="remove('<?php print $fieldName; ?>', key)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
         </div>
         <div ng-controller="upload" ng-if="!files['<?php print $fieldName; ?>'].length">
-          <div ng-class="{'upload-active': uploading}" class="placeholder-thumbnail drop-zone" nv-file-drop="" uploader="uploader" ng-click="select('<?php print $fieldName; ?>', $event)">
+          <div ng-class="{'upload-active': uploading}" class="placeholder-thumbnail drop-zone visible" nv-file-drop="" uploader="uploader" ng-click="select('<?php print $fieldName; ?>', $event)">
             <p class="upload-text">Drop an image or select a file to bring your content to life</p>
             <button class="btn btn-primary media-select" id="<?php print $fieldName; ?>_select" ng-click="select('<?php print $fieldName; ?>', $event)"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Select</button>
           </div>
