@@ -41,8 +41,7 @@ function angular_media_libraries_info() {
  * Returns the path to the JS app.
  */
 function angular_media_app_path() {
-  $library = libraries_load('angular-media-app');
-  return $library['library path'] . '/dist/';
+  return drupal_get_path('module', 'angular_media') .'/js/angular-media-app/dist/';
 }
 
 /**
