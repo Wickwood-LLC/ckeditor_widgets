@@ -24,6 +24,7 @@
 
     for (var i = elements.length; i--; ) {
       element = elements[ i ];
+      console.log(element);
 
       if (element.type == 'hbox' || element.type == 'vbox' || element.type == 'fieldset')
         attachAngularMedia(editor, dialogName, definition, element.children);
@@ -106,12 +107,12 @@
   }
 
   CKEDITOR.plugins.add('angularMedia',
-          {
-            requires: ['dialog'],
-            init: function(editor) {
-              // Needed to keep things happy.
-            }
-          });
+  {
+    requires: ['dialog'],
+    init: function(editor) {
+      // Needed to keep things happy.
+    }
+  });
 
   CKEDITOR.on('dialogDefinition', function(evt) {
     var definition = evt.data.definition, element;
