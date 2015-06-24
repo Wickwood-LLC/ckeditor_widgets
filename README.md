@@ -14,6 +14,12 @@ Rethinking the media dialog interface with the help of Angular.
 * Install the module in Drupal
 * Add a new File field and select the Angular Media Browser widget
 
+###CKEditor configuration steps
+In order to get the CKEditor integration to work, follow these steps:
+1. In CKEditor profile, under Editor Apperance, check Plugin for Angular Media Browser and add the insert image button.
+2. In CKEditor profile, under File Browser Settings, change File browser type to "CKFinder".
+3. In global CKEditor settings(`/admin/config/content/ckeditor/editg`), in Local path to CKFinder, enter any valid url (we use "modules" in Helm).
+4. On permissions (`admin/people/permissions`), give the appropriate role access to CKFinder access.
 
 ###Status
 This module is currently in a MVP state and should not be used on production websites.  It is under active development and many features and improvements will be added in the coming weeks. If you are interested in helping, please post a note in the issue queue.
