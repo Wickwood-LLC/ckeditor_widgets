@@ -210,6 +210,8 @@ function angular_media_callback_upload() {
   $_FILES['files']['size'][$fieldName] = $_FILES['file']['size'];
 
   $file = file_save_upload($fieldName, $validators, $destination, FILE_EXISTS_RENAME);
+  $file->status = 1;
+  file_save($file);
   watchdog('angular_media', 'file uploaded <pre>%f</pre>', array('%f' => print_r($file,1)));
 
   drupal_json_output(angular_media_simplify_file($file));
@@ -481,7 +483,7 @@ function angular_media_ckeditor_plugin() {
  */
 function angular_media_form_alter(&$form, &$form_state, $form_id) {
   // @todo: other entity types...
-  if (!empty($form['#node_edit_form']) || $form_id === 'taxonomy_form_term') {
+  if (strpos($form_id, '_node_form') !== FALSE || $form_id === 'taxonomy_form_term') {
     $fieldName = 'media_ckeditor';
 
     $options = array(

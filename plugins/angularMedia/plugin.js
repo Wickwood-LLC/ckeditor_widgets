@@ -24,9 +24,8 @@
 
     for (var i = elements.length; i--; ) {
       element = elements[ i ];
-      console.log(element);
 
-      if (element.type == 'hbox' || element.type == 'vbox' || element.type == 'fieldset')
+      if (element.type == 'hbox' || element.type == 'vbox' || element.type == 'fieldset' || element.type == 'file')
         attachAngularMedia(editor, dialogName, definition, element.children);
 
       if (!element.filebrowser)
@@ -39,8 +38,8 @@
         };
         element.filebrowser = fb;
       }
-
       if (element.filebrowser.action == 'Browse') {
+        
         element.onClick = angularMedia;
         element.label = 'Upload/' + editor.lang.common.browseServer; // Fix language here.
         // Make sure the button is visible since we are handling it with media.

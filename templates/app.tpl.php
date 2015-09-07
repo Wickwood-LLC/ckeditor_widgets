@@ -10,13 +10,13 @@
 
         <div class="placeholder-thumbnail" ng-repeat="(key, file) in files['<?php print $fieldName; ?>']" title="{{file.name}}" ng-class="files['<?php print $fieldName; ?>'].length ? 'visible' : 'hidden'">
           <img ng-if="file.thumbUrl" ng-src="{{file.url}}" />
-          <button type="button" class="btn btn-default btn-action thumbnail-edit" ng-click="edit(file.fid, '<?php print $fieldName; ?>', key)"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
-          <button type="button" class="btn btn-danger btn-action thumbnail-remove" ng-click="remove('<?php print $fieldName; ?>', key)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+          <button type="button" class="btn btn-default btn-action thumbnail-edit" ng-click="edit(file.fid, '<?php print $fieldName; ?>', key)"><span class="fa fa-cog" aria-hidden="true"></span></button>
+          <button type="button" class="btn btn-danger btn-action thumbnail-remove" ng-click="remove('<?php print $fieldName; ?>', key)"><span class="fa fa-trash" aria-hidden="true"></span></button>
         </div>
         <div ng-controller="upload" ng-if="!files['<?php print $fieldName; ?>'].length">
           <div ng-class="{'upload-active': uploading}" class="placeholder-thumbnail drop-zone visible" nv-file-drop="" uploader="uploader" ng-click="select('<?php print $fieldName; ?>', $event)">
             <p class="upload-text">Drop an image or select a file to bring your content to life</p>
-            <button class="btn btn-primary media-select" id="<?php print $fieldName; ?>_select" ng-click="select('<?php print $fieldName; ?>', $event)"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Select</button>
+            <button class="btn btn-primary media-select" id="<?php print $fieldName; ?>_select" ng-click="select('<?php print $fieldName; ?>', $event)"><span class="fa fa-picture-o" aria-hidden="true"></span> Select</button>
           </div>
         </div>
 
@@ -25,14 +25,14 @@
         <div class="thumbnail" ng-repeat="(key, file) in files['<?php print $fieldName; ?>']" title="{{file.name}}">
           <div thumbnails></div>
           <a href class="thumbnail-title" ng-click="edit(file.fid)">{{file.name}}</a>
-            <button type="button" class="btn btn-action btn-default btn-xs thumbnail-edit" ng-click="edit(file.fid, '<?php print $fieldName; ?>', key)"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
-            <button type="button" class="btn btn-action btn-danger btn-xs thumbnail-remove" ng-click="remove('<?php print $fieldName; ?>', key)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-action btn-default btn-xs thumbnail-edit" ng-click="edit(file.fid, '<?php print $fieldName; ?>', key)"><span class="fa fa-cog" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-action btn-danger btn-xs thumbnail-remove" ng-click="remove('<?php print $fieldName; ?>', key)"><span class="fa fa-trash" aria-hidden="true"></span></button>
         </div>
         <div ng-controller="upload">
           <div ng-class="{'upload-active': uploading}" class="thumbnail drop-zone" nv-file-drop="" uploader="uploader">
-            <div><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Drop files</div>
+            <div><span class="fa fa-download" aria-hidden="true"></span> Drop files</div>
             <div class="or">or</div>
-            <button class="btn btn-primary media-select" id="<?php print $fieldName; ?>_select" ng-click="select('<?php print $fieldName; ?>', $event)"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Select</button>
+            <button class="btn btn-primary media-select" id="<?php print $fieldName; ?>_select" ng-click="select('<?php print $fieldName; ?>', $event)"><span class="fa fa-picture-o" aria-hidden="true"></span> Select</button>
           </div>
         </div>
 
@@ -40,7 +40,7 @@
 
     <?php else: ?>
 
-      <button class="btn btn-primary media-select" id="<?php print $fieldName; ?>_select" ng-click="select('<?php print $fieldName; ?>', $event)"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Select</button>
+      <button class="btn btn-primary media-select" id="<?php print $fieldName; ?>_select" ng-click="select('<?php print $fieldName; ?>', $event)"><span class="fa fa-picture-o" aria-hidden="true"></span> Select</button>
     
     <?php endif; ?>
   </div>
