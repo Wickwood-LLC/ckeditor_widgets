@@ -17,13 +17,13 @@
         </div>
       </div>
 
-      <button class="btn btn-lg bottom-right" ng-class="uploader.queue ? 'btn-success' : 'btn-disabled'" ng-click="submit($event)"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>
+      <button class="btn btn-lg bottom-right" ng-class="uploader.queue ? 'btn-success' : 'btn-disabled'" ng-click="submit($event)"><span class="fa fa-plus" aria-hidden="true"></span> Add</button>
     </div>
 
     <div class="left">
       
       <div ng-class="{'upload-active': uploading}" ng-if="!file" class="drop-zone" nv-file-drop="" uploader="uploader">
-        <div class="drop-label"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Drop files here</div>
+        <div class="drop-label"><span class="fa fa-cloud-download" aria-hidden="true"></span> Drop files here</div>
         <div class="or">or</div>
         <div>
           <input type="file" nv-file-select="" uploader="uploader" multiple class="file-upload"  />
