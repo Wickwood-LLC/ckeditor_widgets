@@ -1,33 +1,34 @@
-Improve the content authoring experience by using CKEditor's new widget interface.
-This module adds a dropdown menu with numerous CKEditor widgets, including a quotebox, columns based on Twitter Bootstrap's grid, and media insert.
+Angular Media
+=============
 
-* Watch a demo: http://youtu.be/KCfy6UQy3VQ
-* Hands-on demo: http://ckeditor-widgets.albatrossdemos.com/
+Rethinking the media dialog interface with the help of Angular.
+
+###Highlights
+* A better user interface for selecting and editing files in Drupal
+* Easy multi-upload built-in to every selection method
+* Search for and easily add creative commons photos with proper attribution
+
+###Installation
+* Install the module dependencies (file_entity, media, views, features, views_data_export_json).
+* Download the Angular Media App from Github and copy it to sites/all/libraries (or similar): https://github.com/albatrossdigital/angular-media-app
+* Install the module in Drupal
+* Add a new File field and select the Angular Media Browser widget
+
+###CKEditor configuration steps
+In order to get the CKEditor integration to work, follow these steps:
+1. In CKEditor profile, under Editor Apperance, check Plugin for Angular Media Browser and add the insert image button.
+2. In CKEditor profile, under File Browser Settings, change File browser type to "CKFinder".
+3. In global CKEditor settings(`/admin/config/content/ckeditor/editg`), in Local path to CKFinder, enter any valid url (we use "modules" in Helm).
+4. On permissions (`admin/people/permissions`), give the appropriate role access to CKFinder access.
+
+###Status
+This module is currently in a MVP state and should not be used on production websites.  It is under active development and many features and improvements will be added in the coming weeks. If you are interested in helping, please post a note in the issue queue.
+
+###Roadmap
+* Make the Angular Media field work when there are multiple instances on one edit page
+* Remove the media dependency
+* Make the Angular Media field work when the form is loaded via the Drupal AJAX api (ctools modals)
 
 
-###Requirements
-* [CKEditor Drupal module](http://drupal.org/project/ckeditor)
-* Download the [CKEditor library](http://ckeditor.com/download) with the [Widget plugin](http://ckeditor.com/addon/widget).  You can also clone from this GitHub project, which will include everything you need: https://github.com/albatrossdigital/ckeditor-sandbox.
-
-
-###Installation and configuration
-1. Install the module at `/admin/modules`
-
-2. Edit your CKEDitor profile (for example `/admin/config/content/ckeditor/edit/Basic`):
-* Open the Editor Appearance fieldset. Towards the bottom under Plugins, check the box next to: Plugin to add widgets based on Bootstrap elements, Plugin to add common widgets, Plugin for adding an Insert Template dropdown menu.
-* Open the Advanced content filter fieldset. Add the following under Extra allowed content:
-```
-p a div span h2 h3 h4 h5 h6 section article iframe object embed strong b i em cite pre blockquote small sub sup code ul ol li dl dt dd table thead tbody th tr td img caption mediawrapper br[href,src,target,width,height,colspan,span,alt,name,title,class,id,data-options]{text-align,float,margin}(*);
-```
-
-3. Go to Configuration > Content Authoring > CKEditor Widgets (`/admin/config/content/ckeditor_widgets`). Check the boxs under Enabled dropdown buttons.
-
-4. Edit your Text Format (for example, `/admin/config/content/formats/filtered_html`). You will need allow all of the elements above.  We recommend the [CKEditor Filter](https://www.drupal.org/project/ckeditor_filter) module, which we created for this purpose.  The [project screenshot](https://www.drupal.org/files/project-images/CKEditor-filter-screenshot.png) has all the settings you need for this CKEditor Widgets.
-
-####Auto-install
-Don't want to go through all of the setup? Try [installing our distro, Soar](https://github.com/albatrossdigital/soar-drops-7).  The [soar_input_formats](https://github.com/albatrossdigital/soar-drops-7/tree/master/profiles/soar/modules/features/soar_input_formats) feature sets up everything.
-
-
-###Supporting organization: 
-[Albatross Digital](http://albatrossdigital.com)
-Conception, development and maintenance
+###Who?
+Conception and development to this point has been done by <a href="http://albatrossdigital.com">Albatross Digital</a>. We believe that every website should look beautiful, and having a user-friendly media experience is paramount to that vision.
