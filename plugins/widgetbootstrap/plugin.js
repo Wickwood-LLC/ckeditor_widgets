@@ -49,12 +49,10 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             editables: {
                 col1: {
-                    selector: '.col-sidebar',
-                    allowedContent: allowedWidget
+                    selector: '.col-sidebar'
                 },
                 col2: {
-                    selector: '.col-main',
-                    allowedContent: allowedWidget
+                    selector: '.col-main'
                 }
             },
 
@@ -78,12 +76,10 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             editables: {
                 col1: {
-                    selector: '.col-sidebar',
-                    allowedContent: allowedWidget
+                    selector: '.col-sidebar'
                 },
                 col2: {
-                    selector: '.col-main',
-                    allowedContent: allowedWidget
+                    selector: '.col-main'
                 }
             },
 
@@ -107,12 +103,10 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             editables: {
                 col1: {
-                    selector: '.col-1',
-                    allowedContent: allowedWidget
+                    selector: '.col-1'
                 },
                 col2: {
-                    selector: '.col-2',
-                    allowedContent: allowedWidget
+                    selector: '.col-2'
                 }
             },
 
@@ -137,16 +131,13 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             editables: {
                 col1: {
-                    selector: '.col-1',
-                    allowedContent: allowedWidget
+                    selector: '.col-1'
                 },
                 col2: {
-                    selector: '.col-2',
-                    allowedContent: allowedWidget
+                    selector: '.col-2'
                 },
                 col3: {
-                    selector: '.col-3',
-                    allowedContent: allowedWidget
+                    selector: '.col-3'
                 }
             },
 
@@ -173,8 +164,7 @@ CKEDITOR.plugins.add( 'widgetbootstrap', {
 
             editables: {
                 alertBox: {
-                    selector: '.alert-text',
-                    allowedContent: allowedWidget
+                    selector: '.alert-text'
                 },
             },
 
