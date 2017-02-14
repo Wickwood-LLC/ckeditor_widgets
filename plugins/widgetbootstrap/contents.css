@@ -143,6 +143,8 @@
   margin-bottom: 5px;
   display: inline-block;
   width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
 }
 .panel-body.box-content {
   box-shadow: 0 1px 1px #ddd inset;
@@ -152,4 +154,6 @@
   min-height: 5em;
   display: inline-block;
   width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
 }
