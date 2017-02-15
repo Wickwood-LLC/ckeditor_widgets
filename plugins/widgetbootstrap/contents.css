@@ -99,6 +99,17 @@
   margin-right: 8px;
 }
 
+.four-col .col {
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+.four-col .col:first-child {
+	padding-left: 0;
+}
+.four-col .col:last-child {
+	padding-right: 0;
+}
+
 .accordion {
 	padding-top: 2px;
 }
