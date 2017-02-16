@@ -32,7 +32,8 @@
 
 
 .box .box-title {
-	background: #ddd;
+	background: #fff;
+	margin-bottom: 10px;
 }
 .box .row {
 	margin-left: 0;
