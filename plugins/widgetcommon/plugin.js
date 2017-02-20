@@ -35,7 +35,7 @@ CKEDITOR.plugins.add( 'widgetcommon', {
 
             template:
                 '<div class="panel panel-default">' +
-                    '<div class="panel-heading box-title">Title</h2></div>' +
+                    '<div class="panel-heading box-title"><h2>Title</h2></div>' +
                     '<div class="panel-body box-content">Content</div>' +
                 '</div>',
 
