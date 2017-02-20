@@ -42,7 +42,7 @@ CKEDITOR.plugins.add( 'widgetcommon', {
             editables: {
                 title: {
                     selector: '.box-title',
-                    allowedContent: allowedTitle
+                    allowedContent: allowedWidget
                 },
                 content: {
                     selector: '.box-content',
