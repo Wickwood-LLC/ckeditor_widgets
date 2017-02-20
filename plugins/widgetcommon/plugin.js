@@ -35,13 +35,13 @@ CKEDITOR.plugins.add( 'widgetcommon', {
 
             template:
                 '<div class="panel panel-default">' +
-                    '<div class="panel-heading box-title">Title</div>' +
+                    '<div class="panel-heading box-title">Title</h2></div>' +
                     '<div class="panel-body box-content">Content</div>' +
                 '</div>',
 
             editables: {
                 title: {
-                    selector: '.box-title',
+                    selector: '.box-title'
                 },
                 content: {
                     selector: '.box-content',
